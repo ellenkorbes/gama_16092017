@@ -15,6 +15,7 @@ app.use(bodyParser.urlencoded({
 app.post('/form', function (request, response) {
   mongo.connect(mongouri, function (err, db) {
     if (err) throw err
+    console.log(request.body)
     var newEntry = [{
       "nome": request.body.nome,
       "email": request.body.email,
